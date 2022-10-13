@@ -15,7 +15,10 @@ public class PlayerController : MonoBehaviour
     float targetAngle;
 
     public Transform cam;
+    public Transform gunPosition;
     public GameObject gun;
+    public GameObject bullet;
+    public GameObject bulletFX;
     public float turnSmoothVelocity;
     public float turnSmoothTime;
     public bool isMovermentPressed = false;
@@ -109,6 +112,24 @@ public class PlayerController : MonoBehaviour
     }
     void OnFire()
     {
-        PicoAnimator.SetTrigger("FireGun");
+        if (isAim)
+        {
+            PicoAnimator.SetTrigger("FireGun");
+            StartCoroutine(startGunFX());
+            Shoot();
+        }
+    }
+
+    public void Shoot()
+    {
+        GameObject bl = Instantiate(bullet, gunPosition.position, Quaternion.identity);
+        bl.GetComponent<Rigidbody>().AddForce(gunPosition.transform.forward * 50f, ForceMode.Impulse);
+    }
+    IEnumerator startGunFX()
+    {
+        bulletFX.SetActive(true);
+        yield return new WaitForSeconds(0.5f);
+        bulletFX.SetActive(false);
+
     }
 }

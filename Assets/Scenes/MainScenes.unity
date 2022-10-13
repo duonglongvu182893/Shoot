@@ -325,6 +325,16 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+--- !u!1 &779953841 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2161412377999221380, guid: 83628a2e699576147adabb30587f44d4, type: 3}
+  m_PrefabInstance: {fileID: 1320492746}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &882217832 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1627613814576795599, guid: 83628a2e699576147adabb30587f44d4, type: 3}
+  m_PrefabInstance: {fileID: 1320492746}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &963194225
 GameObject:
   m_ObjectHideFlags: 0
@@ -421,6 +431,7 @@ GameObject:
   - component: {fileID: 968227619}
   - component: {fileID: 968227618}
   - component: {fileID: 968227617}
+  - component: {fileID: 968227621}
   m_Layer: 0
   m_Name: Cube
   m_TagString: Untagged
@@ -506,6 +517,22 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!54 &968227621
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 968227616}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &1202475833
 GameObject:
   m_ObjectHideFlags: 0
@@ -593,6 +620,10 @@ PrefabInstance:
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2161412377999221380, guid: 83628a2e699576147adabb30587f44d4, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2350652681907635850, guid: 83628a2e699576147adabb30587f44d4, type: 3}
       propertyPath: m_Name
       value: PicoChan
@@ -661,7 +692,8 @@ PrefabInstance:
       propertyPath: m_Controller
       value: 
       objectReference: {fileID: 9100000, guid: 11f84f1c7cf71428390fb90fab73ed04, type: 2}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 2161412378870342429, guid: 83628a2e699576147adabb30587f44d4, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 83628a2e699576147adabb30587f44d4, type: 3}
 --- !u!1 &1861285435 stripped
 GameObject:
@@ -699,7 +731,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cam: {fileID: 963194228}
+  gunPosition: {fileID: 882217832}
   gun: {fileID: 307356563}
+  bullet: {fileID: 968227616}
+  bulletFX: {fileID: 779953841}
   turnSmoothVelocity: 10
   turnSmoothTime: 0.05
   isMovermentPressed: 0
