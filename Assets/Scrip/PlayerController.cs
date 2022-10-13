@@ -15,10 +15,12 @@ public class PlayerController : MonoBehaviour
     float targetAngle;
 
     public Transform cam;
+    public GameObject gun;
     public float turnSmoothVelocity;
     public float turnSmoothTime;
     public bool isMovermentPressed = false;
     public bool isAim = false;
+    //public bool isFire = false;
 
 
     // Start is called before the first frame update
@@ -85,11 +87,14 @@ public class PlayerController : MonoBehaviour
         if (isAim)
         {
             PicoAnimator.SetBool("Aim", true);
+            gun.SetActive(true);
         }
         else if (!isAim)
         {
             PicoAnimator.SetBool("Aim", false);
+            gun.SetActive(false);
         }
+        
     }
     void OnAim()
     {
@@ -101,5 +106,9 @@ public class PlayerController : MonoBehaviour
         {
             isAim = true;
         }
+    }
+    void OnFire()
+    {
+        PicoAnimator.SetTrigger("FireGun");
     }
 }
