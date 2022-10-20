@@ -111,6 +111,7 @@ Material:
     - _GlossyReflections: 0
     - _Metallic: 0
     - _OcclusionStrength: 1
+    - _OutLine: 0
     - _Parallax: 0.005
     - _QueueControl: 0
     - _QueueOffset: 0
@@ -120,6 +121,9 @@ Material:
     - _SpecularHighlights: 1
     - _SrcBlend: 1
     - _Surface: 0
+    - _ToonBright: 0
+    - _ToonOffset: 0
+    - _ToonSmoothness: 0
     - _WorkflowMode: 1
     - _ZWrite: 1
     m_Colors:
